@@ -19,6 +19,7 @@ public class BattleshipBoard {
         board = new GamePiece[rowCount][colCount];
     }
     
+    //Can Throw Array Index Out Of Bounds 
     public final void placeGamePieceOnBoard(GamePiece piece){
         for(GamePieceSegment segment : piece.getSegmentArray()){
             Coordinate c = segment.getLocaton();
