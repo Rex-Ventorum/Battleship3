@@ -65,10 +65,10 @@ public class Coordinate {
         if(letterNumber == null || !letterNumber.matches("[A-Z][0-9]{1,2}")) 
                throw new IllegalArgumentException("String May Not Be Null Or Empty and must A# or A##");
         
-        int y = letterNumber.charAt(0)-A_INT+1;
-        int x = Integer.parseInt(letterNumber.substring(1));
+        int tempY = letterNumber.charAt(0)-A_INT+1;
+        int tempX = Integer.parseInt(letterNumber.substring(1));
         
-        setX(x); setY(y);
+        setX(tempX); setY(tempY);
     }
     
     //--------------------//

@@ -4,9 +4,9 @@ public class BattleshipBoard {
     private static final int DEFAULT_ROW = 10; // 'J'
     private static final int DEFAULT_COL = 14; 
     
-    private int rowCount;
-    private int colCount;
-    private GamePiece[][] board;
+    private final int rowCount;
+    private final int colCount;
+    private final GamePiece[][] board;
     
     public BattleshipBoard(){
         this(DEFAULT_ROW,DEFAULT_COL);
@@ -19,10 +19,13 @@ public class BattleshipBoard {
         board = new GamePiece[rowCount][colCount];
     }
     
-    public void placeGamePieceOnBoard(GamePiece piece){
+    public final void placeGamePieceOnBoard(GamePiece piece){
         for(GamePieceSegment segment : piece.getSegmentArray()){
             Coordinate c = segment.getLocaton();
             board[c.getArrayRow()][c.getArrayCol()] = piece;
         }
     }
+    
+    public final int getRowCount(){return rowCount;}
+    public final int getColCount(){return colCount;}
 }
