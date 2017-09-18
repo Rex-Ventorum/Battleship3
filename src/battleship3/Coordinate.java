@@ -16,6 +16,8 @@ public class Coordinate {
     private int x;
     private int y;
     
+    public Coordinate(){this(MIN_RANGE,MIN_RANGE);}
+    
     public Coordinate(String battleShipString){
         setViaBattleShipString(battleShipString);
     }
@@ -60,6 +62,15 @@ public class Coordinate {
         if(y > MAX_RANGE || y < MIN_RANGE) throw new IllegalArgumentException("Y" + OUT_OF_RANGE_MSG);
         this.y = y;
     }
+    
+    public final void setRow(int row){setY(row);}
+    public final void setCol(int col){setX(col);}
+    
+    public final void setArrayRow(int row){setY(row+1);}
+    public final void setArrayCol(int col){setX(col+1);}
+    
+    public final void setArrayX(int x){setX(x+1);}
+    public final void setArrayY(int y){setY(y+1);}
     
     public final void setViaBattleShipString(String letterNumber){
         if(letterNumber == null || !letterNumber.matches("[A-Z][0-9]{1,2}")) 

@@ -1,5 +1,7 @@
 package battleship3;
 
+import java.awt.Image;
+
 public class BattleshipBoard {
     private static final int DEFAULT_ROW = 10; // 'J'
     private static final int DEFAULT_COL = 14; 
@@ -29,4 +31,19 @@ public class BattleshipBoard {
     
     public final int getRowCount(){return rowCount;}
     public final int getColCount(){return colCount;}
+    
+    //Future GUI should not need to know about GamePiece object only that the board can 
+    //be diplayed via this method
+    public final Image[][] getBoardDisplay(){
+        Image[][] display = new Image[rowCount][colCount];
+        for(int row=0; row < rowCount; row++){
+            for(int col=0; col< colCount; col++){
+                Coordinate coordinate = new Coordinate();
+                coordinate.setArrayRow(row); coordinate.setArrayCol(col);
+                Image segmentImage = board[row][col].getSegmentAt(coordinate).getImage();
+                display[row][col] = segmentImage;
+            }//end of col loop
+        }//end of row loop
+        return display;
+    }
 }
