@@ -6,7 +6,7 @@ package battleship3;
  */
 public class StartUp {
     public static void main(String[] args) {
-        Coordinate test = new Coordinate(2,6);
+        Coordinate test = new Coordinate("B15");
         System.out.println(test.getBattleShipString());
         System.out.println(test.getX());
         System.out.println(test.getY());
