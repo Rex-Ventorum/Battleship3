@@ -71,4 +71,11 @@ public class Coordinate {
         setX(x); setY(y);
     }
     
+    //--------------------//
+    //-- Other Methods ---//
+    //--------------------//
+    
+    public boolean equals(Coordinate test){
+        return test.getX() == getX() && test.getY() == getY();
+    }
 }

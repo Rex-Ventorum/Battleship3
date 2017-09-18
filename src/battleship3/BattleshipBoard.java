@@ -18,4 +18,11 @@ public class BattleshipBoard {
         this.rowCount = rowCount; this.colCount = colCount;
         board = new GamePiece[rowCount][colCount];
     }
+    
+    public void placeGamePieceOnBoard(GamePiece piece){
+        for(GamePieceSegment segment : piece.getSegmentArray()){
+            Coordinate c = segment.getLocaton();
+            board[c.getArrayRow()][c.getArrayCol()] = piece;
+        }
+    }
 }
